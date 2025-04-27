@@ -1,7 +1,30 @@
+import User from "../models/user.model.js";
+
 export const signup = async (req, res) => {
-    res.json({
-        data: "You hit the signup endpoint",
-    });
+    try {
+        const {fullname, username, email, password} = req.body;
+
+        const emailRegex = /^[^s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailRegex.text(email)) {
+            return res.status(400).json({ error: "Invalid email format" });
+        }
+
+        const existingUser = await User.findOne({ username });
+        if(existingUser) {
+            return res.status(400).json({ error: "Username is already taken" })
+        }
+
+        const existingEmail = await User.findOne({ email });
+        if(existingEmail) {
+            return res.status(400).json({ error: "Email is already taken" })
+        }
+
+        
+
+    } catch (error) {
+        
+    }
 }
 
 export const login = async (req, res) => {
