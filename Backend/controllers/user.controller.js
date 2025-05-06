@@ -1,4 +1,4 @@
-import User from "../models/user.model";
+import User from "../models/user.model.js";
 
 export const getUSerProfile = async (req, res) => {
   const { username } = req.params;
@@ -31,9 +31,13 @@ export const followUnfollowUser = async (req, res) => {
     const isFollowing = currentUser.following.includes(id);
 
     if(isFollowing) {
-
+        await User.findByIdAndUpdate(id, { $pull: { followers: req.user._id} });
+        await User.findByIdAndUpdate(req.user._id, { $pull: { followers: id} });
+        res.status(200).json({ message: "User unfollowed sucessfully" })
     } else {
-        
+        await User.findByIdAndUpdate(id, { $push: { followers: req.user._id} });
+        await User.findByIdAndUpdate(req.user._id, { $push: { following: id } });   
+        res.status(200).json({ message: "User follows successfuly" });
     }
   } catch (error) {
     console.log("Error in followUnfollowUser: ", error.message);
