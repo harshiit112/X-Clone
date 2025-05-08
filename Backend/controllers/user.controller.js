@@ -147,4 +147,4 @@ export const updateUser = async (req, res) => {
     console.log("Error in updateUser: ", error.message);
     res.status(500).json({ error: error.message });
   }
-}
+};
