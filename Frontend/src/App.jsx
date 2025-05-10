@@ -7,7 +7,7 @@ import SignUpPage from "./pages/auth/SignUpPage";
 
 function App() {
   return (
-    <div className="flex max-w-6xl mx-auto">
+    <div data-theme="x" className="min-h-screen bg-base-100 text-white">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
