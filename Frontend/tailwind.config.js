@@ -20,11 +20,11 @@ export default {
       {
         x: {
           ...daisyUIThemes["dark"],
-          primary: "#1DA1F2",         // Blue buttons
-          secondary: "#16181C",       // Panel background
-          accent: "#1A8CD8",          // Hover accents
-          neutral: "#202327",         // Input bg
-          "base-100": "#000000",      // Page background
+          primary: "#1DA1F2", // Blue buttons
+          secondary: "#16181C", // Panel background
+          accent: "#1A8CD8", // Hover accents
+          neutral: "#202327", // Input bg
+          "base-100": "#000000", // Page background
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",
