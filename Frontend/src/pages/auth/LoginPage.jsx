@@ -49,7 +49,7 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     loginMutation(formData);
-  };
+  };  
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
