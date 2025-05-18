@@ -30,8 +30,6 @@ const Sidebar = () => {
 		},
 		onError: () => {
 			toast.error("Logout failed");
-			console.log(onError);
-			
 		},
 	});
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
