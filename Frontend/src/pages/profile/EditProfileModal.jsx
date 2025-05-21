@@ -7,7 +7,8 @@ const EditProfileModal = () => {
 		email: "",
 		bio: "",
 		link: "",
-
+		newPassword: "",
+		currentPassword: "",
 	});
 
 	const handleInputChange = (e) => {
