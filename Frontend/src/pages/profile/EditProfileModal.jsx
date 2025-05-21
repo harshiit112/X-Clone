@@ -5,7 +5,7 @@ const EditProfileModal = () => {
 		fullName: "",
 		username: "",
 		email: "",
-		
+		bio: "",
 		link: "",
 		newPassword: "",
 		currentPassword: "",
